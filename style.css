@@ -1,0 +1,90 @@
+body {
+  background: linear-gradient(-45deg, #b46e58, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite, zoomInBG 20s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes zoomInBG {
+  0% { background-size: 100% 100%; }
+  50% { background-size: 110% 110%; }
+  100% { background-size: 100% 100%; }
+}
+
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.glass-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 45px rgba(31, 38, 135, 0.5);
+  transition: all 0.3s ease;
+}
+
+.table tbody tr {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-glow {
+  position: relative;
+  color: #fff;
+  background-color: #ff6b6b;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.5);
+  z-index: -1;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.btn-glow:hover {
+  background-color: #f7a800;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.7);
+}
